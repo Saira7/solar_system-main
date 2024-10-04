@@ -91,15 +91,47 @@ export default function ThreeDModel() {
       }}
     >
       {/* Navbar */}
-      <nav style={{ position: "absolute", top: 0, left: 0, width: "100%", backgroundColor: "rgba(0, 0, 0, 0.7)" }}>
-        <ul style={{ display: "flex", justifyContent: "space-around", listStyleType: "none", padding: "10px 0" }}>
+      <div style={{
+      width: '100vw',
+      height: '100vh',
+      backgroundColor: '#000', // Dark background to simulate space
+      color: '#fff', // White text for visibility
+      position: 'relative',
+    }}>
+      {/* Navbar */}
+      <nav style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        backgroundColor: 'rgba(255, 255, 255, 0.2)', // Light background for visibility
+        zIndex: 1000, // High z-index to ensure it's on top
+      }}>
+        <ul style={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          listStyleType: 'none',
+          padding: '10px 0',
+          margin: 0,
+        }}>
           {planets.map((planet) => (
-            <li key={planet.name} style={{ color: "white", cursor: "pointer" }} onClick={() => handlePlanetClick(planet)}>
+            <li key={planet.name} style={{ cursor: 'pointer', padding: '5px 10px' }}>
               {planet.name.charAt(0).toUpperCase() + planet.name.slice(1)}
             </li>
           ))}
         </ul>
       </nav>
+        {/* Placeholder for 3D content */}
+        <div style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        fontSize: '24px',
+      }}>
+        3D Solar System Placeholder
+      </div>
+      </div>
 
       {/* Planet Info Box */}
       {selectedPlanet && (
